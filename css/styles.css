@@ -1,0 +1,172 @@
+html {
+  box-sizing: border-box;
+}
+* {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 100%;
+  background-color: white;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  border-bottom: 1px dotted;
+  padding-bottom: 0.2em;
+}
+
+header {
+  text-align: center;
+  height: fit-content;
+}
+
+nav,
+footer {
+  background-color: teal;
+}
+
+nav {
+  height: fit-content;
+  padding: 1em;
+  align-content: center;
+}
+
+nav ul li a:link,
+nav ul li a:visited {
+  color: white;
+}
+
+nav ul li a:focus,
+nav ul li a:hover,
+nav ul li a:active {
+  color: #fff;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  font-size: 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  flex: 1 1 50%;
+}
+
+nav ul li a {
+  display: block;
+  border: 1px solid;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  margin: 0.25em;
+}
+
+main {
+  color: #555;
+  margin: 0 1em;
+}
+
+aside,
+main {
+  border-radius: 5%;
+  background-color: #f6f3ed;
+  padding: 1em;
+  margin: 1em;
+}
+
+footer {
+  color: #eaddc4;
+  text-align: center;
+  font-size: 0.8em;
+  padding: 1em;
+  height: 5em;
+}
+
+/* tablet */
+@media screen and (min-width: 425px) {
+  nav ul li {
+    flex: none;
+  }
+  nav ul {
+    justify-content: center;
+  }
+  #container {
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    grid-template-columns: 3fr 2fr;
+    grid-template-areas:
+      "banner banner"
+      "main aside2"
+      "aside1 aside1"
+      "footer footer";
+    margin: 0 auto;
+  }
+  header {
+    grid-area: banner;
+  }
+  main {
+    grid-area: main;
+  }
+  #aside1 {
+    grid-area: aside1;
+  }
+  #aside2 {
+    grid-area: aside2;
+  }
+  footer {
+    grid-area: footer;
+  }
+}
+
+/* large */
+@media screen and (min-width: 768px) {
+  nav ul li {
+    flex: none;
+  }
+  nav ul {
+    justify-content: center;
+  }
+  #container {
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas:
+      "banner banner banner"
+      "aside1 main aside2"
+      "footer footer footer";
+    margin: 0 auto;
+    max-width: 800px;
+  }
+  header {
+    grid-area: banner;
+  }
+  main {
+    grid-area: main;
+    background-color: #f6f3ed;
+  }
+  #aside1 {
+    grid-area: aside1;
+    background-color: #f6f3ed;
+    padding: 1em;
+    margin-left: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  #aside2 {
+    grid-area: aside2;
+    background-color: #f6f3ed;
+    padding: 1em;
+    margin-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  footer {
+    grid-area: footer;
+  }
+}
