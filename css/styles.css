@@ -99,7 +99,7 @@ footer {
   #container {
     display: grid;
     grid-template-rows: repeat(4, auto);
-    grid-template-columns: 3fr 2fr;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
     grid-template-areas:
       "banner banner"
       "main aside2"
@@ -112,12 +112,15 @@ footer {
   }
   main {
     grid-area: main;
+    margin-bottom: 0;
   }
   #aside1 {
     grid-area: aside1;
   }
   #aside2 {
     grid-area: aside2;
+    margin-left: 0;
+    margin-bottom: 0;
   }
   footer {
     grid-area: footer;
@@ -135,7 +138,7 @@ footer {
   #container {
     display: grid;
     grid-template-rows: repeat(3, auto);
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr);
     grid-template-areas:
       "banner banner banner"
       "aside1 main aside2"
@@ -149,12 +152,14 @@ footer {
   main {
     grid-area: main;
     background-color: #f6f3ed;
+    margin-bottom: 1em;
   }
   #aside1 {
     grid-area: aside1;
     background-color: #f6f3ed;
     padding: 1em;
     margin-left: 0;
+    margin-right: 0;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
@@ -163,6 +168,7 @@ footer {
     background-color: #f6f3ed;
     padding: 1em;
     margin-right: 0;
+    margin-bottom: 1em;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
